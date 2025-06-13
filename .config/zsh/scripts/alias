@@ -2,7 +2,7 @@
 alias d='doas '
 alias v='nvim'
 alias t='trash'
-alias ls='ls -hpF --color=auto'
+alias ls='ls -hpF --group-directories-first --color=auto'
 alias xi='xbps-install '
 alias xr='xbps-remove'
 alias xq='xbps-query'
