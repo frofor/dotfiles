@@ -1,0 +1,15 @@
+#!/bin/sh
+uptime_minutes=$(($(awk '{print $1}' /proc/uptime | cut -d. -f1) / 60))
+
+if [ $uptime_minutes -ge 60 ]; then
+	text="$((uptime_minutes / 60)) h $((uptime_minutes % 60)) min"
+	class='over-60'
+elif [ $uptime_minutes -ge 45 ]; then
+	text="$uptime_minutes min"
+	class='over-45'
+else
+	text="$uptime_minutes min"
+	class='over-0'
+fi
+
+echo "{ \"id\": \"custom-uptime\", \"class\": \"$class\", \"text\": \"$text\", \"tooltip\": \"Uptime\" }"

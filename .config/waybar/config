@@ -1,0 +1,107 @@
+{
+	"spacing": 30,
+	"modules-left": [
+		"sway/workspaces",
+		"sway/scratchpad",
+		"sway/mode",
+		"sway/window",
+		"custom/uptime"
+	],
+	"modules-center": [
+		"clock"
+	],
+	"modules-right": [
+		"custom/cpu",
+		"custom/mem",
+		"custom/disk",
+		"keyboard-state",
+		"backlight",
+		"network",
+		"pulseaudio",
+		"sway/language",
+		"battery"
+	],
+	"sway/workspaces": {
+		"all-outputs": true,
+		"format": "{icon}",
+		"format-icons": {
+			"1": "󰋜",
+			"2": "󰈹",
+			"3": "",
+			"4": "",
+			"5": "",
+			"6": "",
+			"7": "󰢹",
+			"urgent": "",
+			"default": ""
+		},
+		"warp-on-scroll": false
+	},
+	"sway/scratchpad": {
+		"format": "{icon} {count}",
+		"format-icons": ["", ""],
+		"tooltip-format": "{app}: {title}"
+	},
+	"clock": {
+		"format": "󱑎 {:%R 󰃭 %d.%m.%Y}",
+		"tooltip-format": "<big>{:%A, %d %B}</big>\n<tt><small>{calendar}</small></tt>"
+	},
+	"backlight": {
+		"format": " {percent}%"
+	},
+	"network": {
+		"format-wifi": "󰖩 {essid}",
+		"format-ethernet": " {ifname} {essid}",
+		"tooltip-format": "IP:   {ipaddr}/{cidr}\nMAC: 󰀄 {bssid}\nGAT:  {gwaddr}\n\nSIG: 󱄙 {signaldBm} dBm ({signalStrength}%) 󱐋 {frequency} MHz\nBND: 󱦲 {bandwidthUpBytes} / 󱦳 {bandwidthDownBytes}",
+		"format-disconnected": "󰖪"
+	},
+	"pulseaudio": {
+		"format": "{icon} {volume}% {format_source}",
+		"format-muted": "<span color=\"#f53c3c\">󰖁</span> {format_source}",
+		"format-source": " {volume}%",
+		"format-source-muted": "<span color=\"#f53c3c\"></span>",
+		"format-icons": {
+			"headphone": "󰋋",
+			"headset": "󰋎",
+			"default": ["󰕿", "󰖀", "󰕾"]
+		}
+	},
+	"sway/language": {
+		"format": "󰌌 {short}",
+		"tooltip-format": "{long}"
+	},
+	"battery": {
+		"states": {
+			"warning": 50,
+			"critical": 30
+		},
+		"format": "{icon} {capacity}%",
+		"format-plugged": "󰂄 {capacity}%",
+		"format-icons": ["󱉞", "󰂎", "󱊡", "󱊢", "󱊣"],
+		"tooltip-format": "CAP: 󰁹 {health}% ({capacity}%)\nPOW: 󱐋 {power} W\nCYC:  {cycles}"
+	},
+	"custom/cpu": {
+		"format": "{}",
+		"interval": 10,
+		"return-type": "json",
+		"exec": "$XDG_CONFIG_HOME/waybar/scripts/cpu"
+	},
+	"custom/mem": {
+		"format": "{}",
+		"interval": 10,
+		"return-type": "json",
+		"exec": "doas $HOME/.local/src/waybar-modules/waybar-modules-mem/target/release/waybar-modules-mem"
+	},
+	"custom/disk": {
+		"format": "{}",
+		"interval": 60,
+		"return-type": "json",
+		"exec": "$HOME/.local/src/waybar-modules/waybar-modules-disk/target/release/waybar-modules-disk"
+	},
+	"custom/uptime": {
+		"format": "{}",
+		"interval": 60,
+		"return-type": "json",
+		"exec": "$XDG_CONFIG_HOME/waybar/scripts/uptime"
+	}
+}

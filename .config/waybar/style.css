@@ -1,0 +1,64 @@
+* {
+	font-family: Iosevka NFP, sans-serif;
+	font-size: 14px;
+}
+
+#waybar {
+	background-color: #151515;
+	color: #d0d0d0;
+}
+
+.modules-right {
+	margin-right: 10px;
+}
+
+#workspaces button {
+	border-radius: 0;
+	padding: 2px 7px;
+}
+
+#workspaces button:hover {
+	background-color: #303030;
+}
+
+#workspaces button.focused {
+	background-color: #303030;
+}
+
+#workspaces button.urgent {
+	background-color: #f53c3c;
+}
+
+#mode {
+	background-color: #303030;
+}
+
+#network.wifi {
+	color: #bbd8a3;
+}
+
+#network.ethernet {
+	color: #9ec6f3;
+}
+
+#network.disconnected {
+	color: #f53c3c;
+}
+
+#battery {
+	color: #bbd8a3;
+}
+
+#custom-uptime.over-45 {
+	color: orange;
+}
+
+#custom-uptime.over-60 {
+	color: red;
+}
+
+tooltip {
+	background-color: #151515;
+	border-color: #505050;
+	border-radius: 0;
+}

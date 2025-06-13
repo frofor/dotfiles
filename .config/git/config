@@ -1,0 +1,14 @@
+[user]
+email = 18nraywczifc@protonmail.com
+name = frofor
+signingkey = 35F577EAAE047585
+
+[commit]
+gpgSign = true
+
+[alias]
+st = status
+co = checkout
+br = branch
+ci = commit
+lg = log --oneline --graph --decorate

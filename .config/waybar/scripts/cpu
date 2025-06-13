@@ -1,0 +1,36 @@
+#!/bin/bash
+total_usage=0
+total_temp=0
+cores_num=$(nproc --all)
+
+models=$(grep 'model name' /proc/cpuinfo | uniq | awk '{for(i=4; i<=NF; i++) printf "%s ", $i; print ""}' | sed ':a;N;$!ba;s/\n/\\\\n/g')
+tooltip=$(printf '%s\\n\\nCore  Usage  Frequency  Temperature         Mode' "$models")
+
+for ((core=0; core<cores_num; core++)); do
+	stats=$(grep -w "cpu$core" /proc/stat)
+	idle=$(echo "$stats" | awk '{print $5}')
+	total=$(echo "$stats" | awk '{s=0; for(i=2; i<=NF; i++) s+=$i; print s}')
+	usage=$((100 * (total - idle) / total))
+	total_usage=$((total_usage + usage))
+
+	freq=$(cat "/sys/devices/system/cpu/cpu$core/cpufreq/scaling_cur_freq")
+	freq=$((freq / 1000))
+
+	temp=$(cat "/sys/class/thermal/thermal_zone$core/temp" 2>/dev/null)
+	if [ $? -eq 0 ]; then
+		temp=$((temp / 1000))
+		total_temp=$((total_temp + temp))
+	else
+		temp='?'
+	fi
+
+	governor=$(cat "/sys/devices/system/cpu/cpu$core/cpufreq/scaling_governor")
+
+	tooltip+=$(printf '\\n%4s  %4s%%  %5s MHz  %8s °C  %11s' "$core" "$usage" "$freq" "$temp" "$governor")
+done
+
+avg_usage=$((total_usage / cores_num))
+avg_temp=$((total_temp / cores_num))
+text=$(printf ' %s%% /  %s °C' "$avg_usage" "$avg_temp")
+
+printf '{ "id": "custom-cpu", "class": "%s", "text": "%s", "tooltip": "%s" }\n' "$class" "$text" "$tooltip"

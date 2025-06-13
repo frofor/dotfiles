@@ -1,0 +1,3 @@
+exec librewolf
+exec keepassxc
+exec mpv --pause "$XDG_MUSIC_DIR"
