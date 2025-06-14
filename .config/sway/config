@@ -6,11 +6,11 @@ output eDP-1 pos 1920 0
 bindsym XF86AudioLowerVolume exec pactl set-sink-volume @DEFAULT_SINK@ -5%
 bindsym XF86AudioRaiseVolume exec pactl set-sink-volume @DEFAULT_SINK@ +5%
 bindsym XF86AudioMute exec pactl set-sink-mute @DEFAULT_SINK@ toggle
-bindsym XF86AudioPlay exec echo cycle pause | socat - "$XDG_RUNTIME_DIR/mpv/socket"
-bindsym XF86AudioPause exec echo cycle pause | socat - "$XDG_RUNTIME_DIR/mpv/socket"
-bindsym XF86AudioStop exec echo cycle pause | socat - "$XDG_RUNTIME_DIR/mpv/socket"
-bindsym XF86AudioPrev exec echo playlist-prev | socat - "$XDG_RUNTIME_DIR/mpv/socket"
-bindsym XF86AudioNext exec echo playlist-next | socat - "$XDG_RUNTIME_DIR/mpv/socket"
+bindsym XF86AudioPlay exec echo cycle pause | socat - "$XDG_RUNTIME_DIR/mpv.sock"
+bindsym XF86AudioPause exec echo cycle pause | socat - "$XDG_RUNTIME_DIR/mpv.sock"
+bindsym XF86AudioStop exec echo cycle pause | socat - "$XDG_RUNTIME_DIR/mpv.sock"
+bindsym XF86AudioPrev exec echo playlist-prev | socat - "$XDG_RUNTIME_DIR/mpv.sock"
+bindsym XF86AudioNext exec echo playlist-next | socat - "$XDG_RUNTIME_DIR/mpv.sock"
 bindsym Print exec grim -g "$(slurp)" $(date +%Y%m%d_%H%M%S).png
 
 bindsym $mod+q kill
