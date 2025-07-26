@@ -11,8 +11,10 @@ vim.opt.ignorecase = true
 vim.opt.smartcase = true
 vim.opt.undofile = true
 vim.opt.winborder = 'single'
-
 vim.schedule(function() vim.opt.clipboard = 'unnamedplus' end)
+
+vim.api.nvim_set_keymap('v', '>', '>gv', { noremap = true })
+vim.api.nvim_set_keymap('v', '<', '<gv', { noremap = true })
 
 vim.api.nvim_create_autocmd('BufReadPost', {
 	callback = function()

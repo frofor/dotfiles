@@ -1,4 +1,4 @@
-require('opt')
+require('options')
 
 local path = vim.fn.stdpath('data') .. '/lazy/lazy.nvim'
 if not vim.uv.fs_stat(path) then
@@ -7,7 +7,11 @@ end
 vim.opt.runtimepath:prepend(path)
 
 require('lazy').setup({
-	require('plugins.theme'),
+	require('plugins.lspconfig'),
 	require('plugins.cmp'),
-	require('plugins.lsp'),
+	require('plugins.snacks'),
+	require('plugins.trouble'),
+	require('plugins.noice'),
+	require('plugins.vague'),
+	require('plugins.lualine'),
 })
