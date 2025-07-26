@@ -6,6 +6,9 @@ signingkey = 35F577EAAE047585
 [commit]
 gpgSign = true
 
+[init]
+defaultBranch = main
+
 [alias]
 st = status
 co = checkout
