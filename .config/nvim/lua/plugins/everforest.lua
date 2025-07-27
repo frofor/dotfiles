@@ -1,4 +1,4 @@
 return {
-	'vague2k/vague.nvim',
+	'sainnhe/everforest',
 	config = function() require('config.colorscheme') end,
 }

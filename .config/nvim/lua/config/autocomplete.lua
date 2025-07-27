@@ -1,15 +1,5 @@
 local cmp = require('cmp')
 cmp.setup({
-	sources = {
-		{
-			name = 'nvim_lsp',
-			entry_filter = function(entry, _)
-				return cmp.lsp.CompletionItemKind.Snippet ~= entry:get_kind()
-			end,
-		},
-		{ 'hrsh7th/cmp-buffer' },
-		{ 'hrsh7th/cmp-path' },
-	},
 	mapping = {
 		['<tab>'] = cmp.mapping.select_next_item(),
 		['<s-tab>'] = cmp.mapping.select_prev_item(),
@@ -18,8 +8,57 @@ cmp.setup({
 		['<c-b>'] = cmp.mapping.scroll_docs(-1),
 		['<c-f>'] = cmp.mapping.scroll_docs(3),
 	},
-	window = {
-		completion = cmp.config.window.bordered(),
-		documentation = cmp.config.window.bordered(),
+	formatting = {
+		fields = { 'kind', 'abbr' },
+		format = function(_, item)
+			local exp_len = 30
+			local cur_len = string.len(item.abbr)
+
+			if cur_len < exp_len then
+				item.abbr = item.abbr .. string.rep(' ', exp_len - cur_len)
+			elseif cur_len > exp_len then
+				item.abbr = vim.fn.strcharpart(item.abbr, 0, exp_len) .. '…'
+			end
+
+			item.kind = ({
+				Text = "",
+				Method = "󰊕",
+				Function = "󰊕",
+				Constructor = "",
+				Field = "",
+				Variable = "󰀫",
+				Class = "",
+				Interface = "",
+				Module = "",
+				Property = "",
+				Unit = "",
+				Value = "",
+				Enum = "",
+				Keyword = "",
+				Snippet = "󱄽",
+				Color = "",
+				File = "",
+				Reference = "",
+				Folder = "",
+				EnumMember = "",
+				Constant = "󰏿",
+				Struct = "󰆼",
+				Event = "",
+				Operator = "",
+				TypeParameter = "",
+			})[item.kind]
+
+			return item
+		end,
+	},
+	sources = {
+		{
+			name = 'nvim_lsp',
+			entry_filter = function(entry, _)
+				return entry:get_kind() ~= cmp.lsp.CompletionItemKind.Snippet
+			end,
+		},
+		{ 'hrsh7th/cmp-buffer' },
+		{ 'hrsh7th/cmp-path' },
 	},
 })

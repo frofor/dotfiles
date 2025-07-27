@@ -21,14 +21,15 @@ noice.setup({
 	views = {
 		cmdline_popup = {
 			border = {
-				style = 'single',
+				style = 'none',
 			},
 		},
 		hover = {
 			border = {
-				padding = { 0, 1 },
-				style = 'single',
+				padding = { 0, 0 },
+				style = 'none',
 			},
+			position = { row = 1, col = 0 },
 			scrollbar = false,
 		},
 	},
