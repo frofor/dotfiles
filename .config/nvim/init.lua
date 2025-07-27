@@ -7,7 +7,6 @@ end
 vim.opt.runtimepath:prepend(path)
 
 require('lazy').setup({
-	require('plugins.lspconfig'),
 	require('plugins.cmp'),
 	require('plugins.snacks'),
 	require('plugins.trouble'),
@@ -15,3 +14,5 @@ require('lazy').setup({
 	require('plugins.vague'),
 	require('plugins.lualine'),
 })
+
+require('lsp')
