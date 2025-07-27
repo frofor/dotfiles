@@ -11,7 +11,7 @@ bindsym XF86AudioPause exec echo cycle pause | socat - "$XDG_RUNTIME_DIR/mpv.soc
 bindsym XF86AudioStop exec echo cycle pause | socat - "$XDG_RUNTIME_DIR/mpv.sock"
 bindsym XF86AudioPrev exec echo playlist-prev | socat - "$XDG_RUNTIME_DIR/mpv.sock"
 bindsym XF86AudioNext exec echo playlist-next | socat - "$XDG_RUNTIME_DIR/mpv.sock"
-bindsym Print exec grim -g "$(slurp)" $(date +%Y%m%d_%H%M%S).png
+bindsym Print exec grim -g "$(slurp)" "$XDG_PICTURES_DIR/Screenshots/$(date +%Y%m%d_%H%M%S).png"
 
 bindsym $mod+q kill
 bindsym $mod+Shift+r reload
