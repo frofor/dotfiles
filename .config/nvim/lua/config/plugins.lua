@@ -5,10 +5,11 @@ end
 vim.opt.runtimepath:prepend(path)
 
 require('lazy').setup({
-	require('plugins.everforest'),
-	require('plugins.cmp'),
-	require('plugins.snacks'),
-	require('plugins.trouble'),
-	require('plugins.noice'),
-	require('plugins.lualine'),
+	require('plugins.autocomplete'),
+	require('plugins.colorscheme'),
+	require('plugins.diagnostics'),
+	require('plugins.git'),
+	require('plugins.picker'),
+	require('plugins.statusline'),
+	require('plugins.ui'),
 })

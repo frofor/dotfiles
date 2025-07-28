@@ -12,4 +12,3 @@ vim.opt.smartcase = true
 vim.opt.undofile = true
 vim.opt.winborder = 'single'
 vim.schedule(function() vim.opt.clipboard = 'unnamedplus' end)
-
