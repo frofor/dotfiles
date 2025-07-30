@@ -107,6 +107,7 @@
 	},
 	"custom/uptime": {
 		"format": "{}",
+		"interval": 60,
 		"return-type": "json",
 		"exec": "$XDG_CONFIG_HOME/waybar/scripts/uptime"
 	}
