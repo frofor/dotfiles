@@ -22,15 +22,13 @@ local trouble = require('trouble')
 trouble.setup({})
 
 vim.diagnostic.config({
-	virtual_text = {
-		spacing = 4,
-	},
+	virtual_text = { spacing = 4 },
 	signs = true,
 	update_in_insert = false,
 })
 
 vim.keymap.set('n', '<leader>do', open_diagnostics, { noremap = true })
-vim.keymap.set('n', '<leader>dp', jump_prev_diagnostic, { noremap = true })
-vim.keymap.set('n', '<leader>dn', jump_next_diagnostic, { noremap = true })
-vim.keymap.set('n', '<leader>da', toggle_trouble_diagnostics, { noremap = true })
-vim.keymap.set('n', '<leader>db', toggle_trouble_diagnostics_buf, { noremap = true })
+vim.keymap.set('n', '<leader>d[', jump_prev_diagnostic, { noremap = true })
+vim.keymap.set('n', '<leader>d]', jump_next_diagnostic, { noremap = true })
+vim.keymap.set('n', '<leader>dt', toggle_trouble_diagnostics_buf, { noremap = true })
+vim.keymap.set('n', '<leader>dT', toggle_trouble_diagnostics, { noremap = true })

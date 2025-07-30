@@ -52,12 +52,7 @@ cmp.setup({
 		end,
 	},
 	sources = {
-		{
-			name = 'nvim_lsp',
-			entry_filter = function(entry, _)
-				return entry:get_kind() ~= cmp.lsp.CompletionItemKind.Snippet
-			end,
-		},
+		{ name = 'nvim_lsp' },
 		{ 'hrsh7th/cmp-buffer' },
 		{ 'hrsh7th/cmp-path' },
 	},
