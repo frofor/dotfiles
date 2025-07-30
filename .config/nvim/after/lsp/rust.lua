@@ -14,7 +14,7 @@ return {
 			},
 			check = {
 				command = 'clippy',
-				extraArgs = '-W clippy::pedantic -W clippy::cargo',
+				extraArgs = { '--', '-W', 'clippy::pedantic', '-W', 'clippy::cargo' },
 				features = 'all',
 			},
 			completion = {
