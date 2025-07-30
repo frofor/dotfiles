@@ -33,20 +33,28 @@
 	background-color: #303030;
 }
 
-#network.wifi {
+#battery {
 	color: #bbd8a3;
 }
 
-#network.ethernet {
+#custom-net.wireless {
+	color: #bbd8a3;
+}
+
+#custom-net.ethernet {
 	color: #9ec6f3;
 }
 
-#network.disconnected {
+#custom-net.disconnected {
 	color: #f53c3c;
 }
 
-#battery {
-	color: #bbd8a3;
+#custom-vpn.connected {
+	color: #9ec6f3;
+}
+
+#custom-vpn.disconnected {
+	color: #f53c3c;
 }
 
 #custom-uptime.over-45 {

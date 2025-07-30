@@ -16,7 +16,8 @@
 		"custom/disk",
 		"keyboard-state",
 		"backlight",
-		"network",
+		"custom/net",
+		"custom/vpn",
 		"pulseaudio",
 		"sway/language",
 		"battery"
@@ -48,12 +49,6 @@
 	},
 	"backlight": {
 		"format": " {percent}%"
-	},
-	"network": {
-		"format-wifi": "󰖩 {essid}",
-		"format-ethernet": " {ifname} {essid}",
-		"tooltip-format": "IP:   {ipaddr}/{cidr}\nMAC: 󰀄 {bssid}\nGAT:  {gwaddr}\n\nSIG: 󱄙 {signaldBm} dBm ({signalStrength}%) 󱐋 {frequency} MHz\nBND: 󱦲 {bandwidthUpBytes} / 󱦳 {bandwidthDownBytes}",
-		"format-disconnected": "󰖪"
 	},
 	"pulseaudio": {
 		"format": "{icon} {volume}% {format_source}",
@@ -98,9 +93,20 @@
 		"return-type": "json",
 		"exec": "$HOME/.local/src/waybar-modules/waybar-modules-disk/target/release/waybar-modules-disk"
 	},
+	"custom/net": {
+		"format": "{}",
+		"interval": 5,
+		"return-type": "json",
+		"exec": "$HOME/.local/src/waybar-modules/waybar-modules-net/target/release/waybar-modules-net"
+	},
+	"custom/vpn": {
+		"format": "{}",
+		"interval": 5,
+		"return-type": "json",
+		"exec": "$HOME/.local/src/waybar-modules/waybar-modules-vpn/target/release/waybar-modules-vpn"
+	},
 	"custom/uptime": {
 		"format": "{}",
-		"interval": 60,
 		"return-type": "json",
 		"exec": "$XDG_CONFIG_HOME/waybar/scripts/uptime"
 	}
