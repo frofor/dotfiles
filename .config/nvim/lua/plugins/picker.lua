@@ -35,6 +35,7 @@ return {
 	keys = {
 		{ '<leader>e', function() Snacks.picker.explorer() end },
 		{ '<leader>`', function() Snacks.terminal() end },
+		{ '<leader>.', function() Snacks.scratch() end },
 		{ '<leader>ff', function() Snacks.picker.files() end },
 		{ '<leader>fr', function() Snacks.picker.recent() end },
 		{ '<leader>fc', function() Snacks.picker.files({ cwd = vim.fn.stdpath('config') }) end },
