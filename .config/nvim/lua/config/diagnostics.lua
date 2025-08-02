@@ -1,21 +1,7 @@
-local function open_diagnostics()
-	vim.diagnostic.open_float()
-end
-
-local function jump_prev_diagnostic()
-	vim.diagnostic.jump({ count = -1 })
-end
-
-local function jump_next_diagnostic()
-	vim.diagnostic.jump({ count = 1 })
-end
-
-local function toggle_trouble_diagnostics()
-	vim.cmd('Trouble diagnostics toggle')
-end
-
-local function toggle_trouble_diagnostics_buf()
-	vim.cmd('Trouble diagnostics toggle filter.buf=0')
+---@param lhs string
+---@param rhs function
+local function map(lhs, rhs)
+	vim.keymap.set('n', lhs, rhs, { noremap = true })
 end
 
 local trouble = require('trouble')
@@ -27,8 +13,8 @@ vim.diagnostic.config({
 	update_in_insert = false,
 })
 
-vim.keymap.set('n', '<leader>do', open_diagnostics, { noremap = true })
-vim.keymap.set('n', '<leader>d[', jump_prev_diagnostic, { noremap = true })
-vim.keymap.set('n', '<leader>d]', jump_next_diagnostic, { noremap = true })
-vim.keymap.set('n', '<leader>dt', toggle_trouble_diagnostics_buf, { noremap = true })
-vim.keymap.set('n', '<leader>dT', toggle_trouble_diagnostics, { noremap = true })
+map('<leader>do', vim.diagnostic.open_float)
+map('<leader>d[', function() vim.diagnostic.jump({ count = -1 }) end)
+map('<leader>d]', function() vim.diagnostic.jump({ count = 1 }) end)
+map('<leader>dt', function() vim.cmd('Trouble diagnostics toggle filter.buf=0') end)
+map('<leader>dT', function() vim.cmd('Trouble diagnostics toggle') end)

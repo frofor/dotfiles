@@ -1,9 +1,15 @@
+---@param lhs string
+---@param rhs function
+local function map(lhs, rhs)
+	vim.keymap.set('n', lhs, rhs, { noremap = true })
+end
+
 local gitsigns = require('gitsigns')
 gitsigns.setup({})
 
-vim.keymap.set('n', '<leader>gd', gitsigns.diffthis)
-vim.keymap.set('n', '<leader>gb', gitsigns.blame_line)
-vim.keymap.set('n', '<leader>gB', gitsigns.blame)
-vim.keymap.set('n', '<leader>go', gitsigns.preview_hunk)
-vim.keymap.set('n', '<leader>g[', function() gitsigns.nav_hunk('prev') end)
-vim.keymap.set('n', '<leader>g]', function() gitsigns.nav_hunk('next') end)
+map('<leader>gd', gitsigns.diffthis)
+map('<leader>gb', gitsigns.blame_line)
+map('<leader>gB', gitsigns.blame)
+map('<leader>go', gitsigns.preview_hunk)
+map('<leader>g[', function() gitsigns.nav_hunk('prev') end)
+map('<leader>g]', function() gitsigns.nav_hunk('next') end)
