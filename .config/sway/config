@@ -17,6 +17,7 @@ bindsym $mod+q kill
 bindsym $mod+Shift+r reload
 bindsym $mod+Return exec foot
 bindsym $mod+space exec fuzzel
+bindsym $mod+n exec foot -e nmtui-connect
 
 bindsym $mod+Left focus left
 bindsym $mod+Right focus right
