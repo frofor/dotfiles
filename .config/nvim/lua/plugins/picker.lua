@@ -3,14 +3,39 @@ return {
 	priority = 1000,
 	lazy = false,
 	opts = {
-		animate = { enabled = true },
-		bigfile = { enabled = true },
-		explorer = { enabled = true },
-		git = { enabled = true },
-		layout = { enabled = true },
 		picker = {
-			enabled = true,
-			sources = { explorer = { hidden = true, layout = { layout = { position = 'right' } } } },
+			matcher = {
+				cwd_bonus = true,
+				frecency = true,
+				history_bonus = true,
+			},
+			icons = {
+					files = {
+						dir = '',
+						dir_open = '',
+						file = '',
+					},
+					git = {
+						commit = 'C',
+						staged = 'S',
+						added = 'A',
+						deleted = 'D',
+						ignored = 'I',
+						modified = 'M',
+						renamed = 'R',
+						unmerged = 'U',
+						untracked = '?',
+					},
+			},
+			sources = {
+				explorer = {
+					auto_close = true,
+					layout = {
+						preview = true,
+						preset = 'default',
+					},
+				},
+			},
 			layouts = {
 				default = {
 					layout = {
@@ -20,20 +45,26 @@ return {
 							width = 0.4,
 							border = 'solid',
 							title = '{title} {live} {flags}',
-							{ win = 'input', height = 1 },
-							{ win = 'list' },
+							{
+								win = 'input',
+								height = 1,
+							},
+							{
+								win = 'list',
+							},
 						},
-						{ win = 'preview', title = '{preview}', border = 'solid' },
+						{
+							win = 'preview',
+							title = '{preview}',
+							border = 'solid',
+						},
 					},
 				},
 			},
 		},
-		rename = { enabled = true },
-		scroll = { enabled = true },
-		terminal = { enabled = true },
 	},
 	keys = {
-		{ '<leader>e', function() Snacks.picker.explorer() end },
+		{ '<leader>e', function() Snacks.explorer() end },
 		{ '<leader>t', function() Snacks.terminal() end },
 		{ '<leader>.', function() Snacks.scratch() end },
 		{ '<leader>ff', function() Snacks.picker.files() end },
@@ -47,6 +78,5 @@ return {
 		{ 'gy', function() Snacks.picker.lsp_type_definitions() end },
 		{ 'gr', function() Snacks.picker.lsp_references() end },
 		{ 'gi', function() Snacks.picker.lsp_implementations() end },
-		{ '<leader>rN', function() Snacks.rename.rename_file() end },
 	},
 }
