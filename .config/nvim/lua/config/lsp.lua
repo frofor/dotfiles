@@ -7,6 +7,7 @@ end
 
 vim.lsp.enable('bash')
 vim.lsp.enable('java')
+vim.lsp.enable('haskell')
 vim.lsp.enable('lua')
 vim.lsp.enable('rust')
 vim.lsp.enable('svelte')

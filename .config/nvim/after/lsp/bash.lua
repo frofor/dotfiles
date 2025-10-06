@@ -1,6 +1,6 @@
 ---@type vim.lsp.Config
 return {
 	cmd = { 'bash-language-server', 'start' },
-	filetypes = { 'bash' },
+	filetypes = { 'sh', 'bash' },
 	root_markers = { '.git' },
 }
