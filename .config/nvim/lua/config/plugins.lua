@@ -6,10 +6,12 @@ vim.opt.runtimepath:prepend(path)
 
 require('lazy').setup({
 	require('plugins.autocomplete'),
+	require('plugins.cargo'),
 	require('plugins.colorscheme'),
 	require('plugins.diagnostics'),
 	require('plugins.git'),
 	require('plugins.llm'),
 	require('plugins.picker'),
 	require('plugins.statusline'),
+	require('plugins.syntax'),
 })

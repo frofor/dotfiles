@@ -1,4 +1,5 @@
 return {
-	'vague2k/vague.nvim',
+	'metalelf0/jellybeans-nvim',
+	dependencies = { 'rktjmp/lush.nvim' },
 	config = function() require('config.colorscheme') end,
 }
