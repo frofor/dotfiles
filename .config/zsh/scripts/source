@@ -1,4 +1,0 @@
-#!/bin/zsh
-source <(fzf --zsh)
-source "$CARGO_HOME/env"
-source "$XDG_CONFIG_HOME/nvm/nvm.sh"
