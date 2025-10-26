@@ -7,3 +7,4 @@ cd "$DOTFILES"
 ./install/doas.sh
 ./install/shell.sh
 ./install/config.sh
+./install/packages.sh
