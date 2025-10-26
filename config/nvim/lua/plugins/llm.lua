@@ -1,5 +1,4 @@
 return {
-	'Exafunction/windsurf.nvim',
-	dependencies = { 'nvim-lua/plenary.nvim', 'hrsh7th/nvim-cmp' },
+	'supermaven-inc/supermaven-nvim',
 	config = function() require('config.llm') end,
 }
