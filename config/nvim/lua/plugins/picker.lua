@@ -32,9 +32,16 @@ return {
                     auto_close = true,
                     layout = {
                         preview = true,
-                        preset = 'default',
+                        preset = function()
+                            return vim.o.columns >= 80 and 'default' or 'vertical'
+                        end,
                     },
                 },
+            },
+            layout = {
+                preset = function()
+                    return vim.o.columns >= 80 and 'default' or 'vertical'
+                end,
             },
             layouts = {
                 default = {
@@ -43,8 +50,31 @@ return {
                         {
                             box = 'vertical',
                             width = 0.4,
-                            border = 'solid',
                             title = '{title} {live} {flags}',
+                            border = 'solid',
+                            {
+                                win = 'input',
+                                height = 1,
+                            },
+                            {
+                                win = 'list',
+                            },
+                        },
+                        {
+                            win = 'preview',
+                            title = '{preview}',
+                            border = 'solid',
+                        },
+                    },
+                },
+                vertical = {
+                    layout = {
+                        box = 'vertical',
+                        {
+                            box = 'vertical',
+                            height = 0.6,
+                            title = '{title} {live} {flags}',
+                            border = 'solid',
                             {
                                 win = 'input',
                                 height = 1,
