@@ -1,16 +1,16 @@
 ---@param lhs string
 ---@param rhs function
 local function map(lhs, rhs)
-	vim.keymap.set('n', lhs, rhs, { noremap = true })
+    vim.keymap.set('n', lhs, rhs, { noremap = true })
 end
 
 local trouble = require('trouble')
 trouble.setup({})
 
 vim.diagnostic.config({
-	virtual_text = { spacing = 4 },
-	signs = true,
-	update_in_insert = false,
+    virtual_text = { spacing = 4 },
+    signs = true,
+    update_in_insert = false,
 })
 
 map('<leader>do', vim.diagnostic.open_float)

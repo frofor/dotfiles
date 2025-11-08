@@ -1,11 +1,11 @@
 local lualine = require('lualine')
 lualine.setup({
-	options = {
-		section_separators = { left = '', right = '' },
-		component_separators = { left = '|', right = '|' },
-	},
-	sections = {
-		lualine_x = { 'filetype' },
-		lualine_y = {},
-	},
+    options = {
+        section_separators = { left = '', right = '' },
+        component_separators = { left = '|', right = '|' },
+    },
+    sections = {
+        lualine_x = { 'filetype' },
+        lualine_y = {},
+    },
 })

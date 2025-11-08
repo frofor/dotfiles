@@ -1,4 +1,4 @@
 return {
-	'lewis6991/gitsigns.nvim',
-	config = function() require('config.git') end,
+    'lewis6991/gitsigns.nvim',
+    config = function() require('config.git') end,
 }

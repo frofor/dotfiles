@@ -1,4 +1,4 @@
 return {
-	'frofor/cargo-ghost',
-	config = function() require('config.cargo') end,
+    'frofor/cargo-ghost',
+    config = function() require('config.cargo') end,
 }

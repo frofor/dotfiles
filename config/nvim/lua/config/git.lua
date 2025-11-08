@@ -1,12 +1,12 @@
 ---@param lhs string
 ---@param rhs function
 local function map(lhs, rhs)
-	vim.keymap.set('n', lhs, rhs, { noremap = true })
+    vim.keymap.set('n', lhs, rhs, { noremap = true })
 end
 
 local gitsigns = require('gitsigns')
 gitsigns.setup({
-	 current_line_blame = true,
+    current_line_blame = true,
 })
 
 map('<leader>g[', function() gitsigns.nav_hunk('prev') end)

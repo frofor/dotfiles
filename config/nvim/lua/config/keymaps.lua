@@ -2,7 +2,7 @@
 ---@param lhs string
 ---@param rhs function
 local function map(mode, lhs, rhs)
-	vim.keymap.set(mode, lhs, rhs, { noremap = true })
+    vim.keymap.set(mode, lhs, rhs, { noremap = true })
 end
 
 map('n', '<leader>w', function() vim.cmd('w') end)
