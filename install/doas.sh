@@ -1,3 +1,4 @@
+#!/usr/bin/env sh
 echo Installing doas
 sudo xbps-install -y opendoas
 

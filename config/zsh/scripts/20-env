@@ -1,0 +1,7 @@
+#!/usr/bin/env zsh
+HISTFILE="$XDG_CACHE_HOME/zsh/history"
+HISTSIZE=1000
+SAVEHIST=1000
+PS1='%~%#'
+
+export GPG_TTY="$(tty)"

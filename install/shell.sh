@@ -1,5 +1,6 @@
-echo Installing Nushell
-doas xbps-install -y nushell
+#!/usr/bin/env sh
+echo Installing Zsh
+doas xbps-install -y zsh
 
-echo Setting default shell to Nushell
-doas chsh -s /usr/bin/nu "$USER"
+echo Setting default shell to Zsh
+doas chsh -s "$(which zsh)" "$USER"

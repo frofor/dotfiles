@@ -1,3 +1,4 @@
+#!/usr/bin/env sh
 install {
 	echo Installing \`$1\`
 	doas xbps-install -y "$1"
@@ -49,4 +50,5 @@ install feh       # Image viewer
 install btop      # Process monitor
 install keepassxc # Password manager
 install rsync     # Backup
+install fzf       # Fuzzy finder
 install trash-cli # Trash

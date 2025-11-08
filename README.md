@@ -9,7 +9,7 @@ Here is the overview of the programs used within the repository:
 | Program | Config | Description |
 | --- | --- | --- |
 | [Sway](https://swaywm.org) | [`config/sway`](./config/sway) | Window manager |
-| [Nushell](https://www.nushell.sh) | [`config/nushell`](./config/nushell) | Shell |
+| [Zsh](https://zsh.org) | [`config/zsh`](./config/zsh) | Shell |
 | [foot](https://codeberg.org/dnkl/foot) | [`config/foot`](./config/foot) | Terminal |
 | [Fuzzel](https://codeberg.org/dnkl/fuzzel) | [`config/fuzzel`](./config/fuzzel) | App launcher |
 | [Dunst](https://dunst-project.org) | [`config/dunst`](./config/dunst) | Notification daemon |

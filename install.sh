@@ -1,3 +1,4 @@
+#!/usr/bin/env sh
 export DOTFILES=~/.local/src/frofor/dotfiles
 
 sudo xbps-install -y git
