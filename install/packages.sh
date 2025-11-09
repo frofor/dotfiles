@@ -36,7 +36,8 @@ install gammastep # Night light
 
 # Neovim
 install neovim                  # Text editor
-install ripgrep                 # Fuzzy finder
+install ripgrep                 # Text searcher
+install fd                      # File searcher
 install wl-clipboard            # Clipboard
 install bash-language-server    # Bash LSP
 install haskell-language-server # Haskell LSP
