@@ -44,7 +44,7 @@
 		"tooltip-format": "{app}: {title}"
 	},
 	"clock": {
-		"format": "󱑎 {:%R 󰃭 %d.%m.%Y}",
+		"format": "󱑎 {:%R 󰃭 %d.%m}",
 		"tooltip-format": "<big>{:%A, %d %B}</big>\n<tt><small>{calendar}</small></tt>"
 	},
 	"backlight": {
