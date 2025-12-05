@@ -15,5 +15,4 @@ vim.opt.listchars = { space = '·', tab = '> ' }
 vim.opt.ignorecase = true
 vim.opt.smartcase = true
 vim.opt.undofile = true
-vim.opt.winborder = 'single'
 vim.schedule(function() vim.opt.clipboard = 'unnamedplus' end)

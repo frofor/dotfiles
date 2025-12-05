@@ -12,6 +12,5 @@ require('lazy').setup({
     require('plugins.git'),
     require('plugins.llm'),
     require('plugins.picker'),
-    require('plugins.statusline'),
     require('plugins.syntax'),
 })
